@@ -1,7 +1,4 @@
-# WEBPACK
-
-ссылка на youtube
-https://youtu.be/j2kK1Lfl30A
+# TechnoShop. Онлайн магазин
 
 Для установки пакетов используйте команду npm install
 
