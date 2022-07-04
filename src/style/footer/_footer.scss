@@ -1,0 +1,75 @@
+.footer {
+	background-color: $color-primary;
+	color: $color-secondary;
+	padding: 80px 0;
+
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr 1fr;
+		gap: 30px;
+	}
+
+	&__logo-link {
+		place-self: start; /*выравнивание элемента макета сетки внутри ячейки по оси столбца и по оси строки grid-контенера*/
+	}
+
+	&__logo {
+		width: 146px;
+	}
+
+	&__column-title {
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 130%;
+		margin-bottom: 40px;
+	}
+
+	&__list {
+		font-weight: 400;
+		font-size: 22px;
+		line-height: 150%;
+
+		&_double {
+			column-count: 2; /*разбивает содержимое элемента на заданное число столбцов.*/
+		}
+
+		&_contacts {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 130%;
+			margin-bottom: 36px;
+		}
+	}
+
+	&__item {
+		margin-bottom: 15px;
+
+		&_contact {
+			margin-bottom: 21px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__link,
+	&__copywright-email {
+		transition: color .36s ease-in-out;
+
+		&:hover {
+			color: $color-main;
+		}
+	}
+
+	&__row {
+		grid-column: 1 / 5;
+		grid-row: 2 / 2;
+		display: flex;
+		justify-content: space-between;
+		padding: 51px 0 81px 0;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 130%;
+	}
+}
