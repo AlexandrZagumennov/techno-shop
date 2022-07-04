@@ -1,0 +1,50 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 21px;
+	font-size: 18px;
+	line-height: 22px;
+
+	&__arrow {
+		display: block;
+		width: 18px;
+		height: 18px;
+		background: {
+			image: url('img/arrow.svg');
+			repeat: no-repeat;
+			position: center;
+		};
+
+		&_start {
+			transform: rotate(180deg);
+		}
+
+		&[href = ''] {
+			opacity: .3;
+			pointer-events: none; /*кнопка недоступна*/
+		}
+	}
+	
+	&__list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+	}
+	
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 36px;
+		height: 36px;
+		border: 2px solid transparent;
+		transition:  border-color .2s ease-in-out;
+
+		&_active {
+			border-color: $color-main;
+		}
+	}
+}
+

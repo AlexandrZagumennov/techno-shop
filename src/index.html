@@ -281,64 +281,67 @@
 						<form class="filter__form">
 							<h3 class="filter__title">Фильтры</h3>
 
-							<fieldset class="filter__field">
-								<legend class="filter__field-title">Цена</legend>
-								<div class="filter__flex">
-									<label>
-										<input name="price-start" placeholder="от" type="number" class="filter__input">
-									</label>
-									<label>
-										<input name="price-end" placeholder="до" type="number" class="filter__input">
-									</label>
-								</div>
-							</fieldset>
-
-							<fieldset class="filter__field">
-								<legend class="filter__field-title">Категории</legend>
-								<select name="category" class="filter__select">
-									<option value="phone">Смартфоны</option>
-									<option value="tab">Планшеты</option>
-									<option value="clock">Умные часы</option>
-									<option value="monoblock">Моноблоки</option>
-									<option value="notebook">Ноутбуки</option>
-								</select>
-							</fieldset>
-
-							<fieldset class="filter__field">
-								<legend class="filter__field-title">Диагональ</legend>
-								<div class="filter__flex">
-									<label>
-										<input name="diagonal-start" placeholder="от" type="number" class="filter__input">
-									</label>
-									<label>
-										<input name="diagonal-end" placeholder="до" type="number" class="filter__input">
-									</label>
-								</div>
-							</fieldset>
-
-							<fieldset class="filter__field">
-								<legend class="filter__field-title">Цвет</legend>
-								<div class="filter__flex">
-									<label>
-										<input name="color" value="white" type="checkbox" class="filter__checkbox">Белый
-									</label>
-									<label>
-										<input name="color" value="black" type="checkbox" class="filter__checkbox">Черный
-									</label>
-									<label>
-										<input name="color" value="silver" type="checkbox" class="filter__checkbox">Серебристый
-									</label>
-									<label>
-										<input name="color" value="red" type="checkbox" class="filter__checkbox">Красный
-									</label>
-									<label>
-										<input name="color" value="green" type="checkbox" class="filter__checkbox">Зеленый
-									</label>
-									<label>
-										<input name="color" value="gold" type="checkbox" class="filter__checkbox">Золотой
-									</label>
-								</div>
-							</fieldset>
+							<div class="filter__fields-list">
+								<fieldset class="filter__field">
+									<legend class="filter__field-title">Цена</legend>
+									<div class="filter__flex">
+										<label>
+											<input name="price-start" placeholder="от" type="number" class="filter__input">
+										</label>
+										<label>
+											<input name="price-end" placeholder="до" type="number" class="filter__input">
+										</label>
+									</div>
+								</fieldset>
+	
+								<fieldset class="filter__field">
+									<legend class="filter__field-title">Категории</legend>
+									<select name="category" class="filter__input filter__input_select">
+										<option value="all" selected>все категории</option>
+										<option value="phone">Смартфоны</option>
+										<option value="tab">Планшеты</option>
+										<option value="clock">Умные часы</option>
+										<option value="monoblock">Моноблоки</option>
+										<option value="notebook">Ноутбуки</option>
+									</select>
+								</fieldset>
+	
+								<fieldset class="filter__field">
+									<legend class="filter__field-title">Диагональ</legend>
+									<div class="filter__flex">
+										<label>
+											<input name="diagonal-start" placeholder="от" type="number" class="filter__input">
+										</label>
+										<label>
+											<input name="diagonal-end" placeholder="до" type="number" class="filter__input">
+										</label>
+									</div>
+								</fieldset>
+	
+								<fieldset class="filter__field">
+									<legend class="filter__field-title">Цвет</legend>
+									<div class="filter__flex filter__flex_column">
+										<label>
+											<input name="color" value="white" type="checkbox" class="filter__checkbox">Белый
+										</label>
+										<label>
+											<input name="color" value="black" type="checkbox" class="filter__checkbox">Черный
+										</label>
+										<label>
+											<input name="color" value="silver" type="checkbox" class="filter__checkbox">Серебристый
+										</label>
+										<label>
+											<input name="color" value="red" type="checkbox" class="filter__checkbox">Красный
+										</label>
+										<label>
+											<input name="color" value="green" type="checkbox" class="filter__checkbox">Зеленый
+										</label>
+										<label>
+											<input name="color" value="gold" type="checkbox" class="filter__checkbox">Золотой
+										</label>
+									</div>
+								</fieldset>
+							</div>
 
 							<button class="filter__apply" type="submit">Применить фильтр</button>
 
@@ -347,26 +350,26 @@
 					</aside>
 
 					<div class="catalog__pagination pagination">
-						<a href="#" class="pagination__arrow pagination__arrow_start" aria-label="перейти на первую страницу"></a>
+						<a href="" class="pagination__arrow pagination__arrow_start" aria-label="перейти на первую страницу"></a>
 						
-						<ul class="pagitation__list">
+						<ul class="pagination__list">
 							<li class="pagination__item">
-								<a href="" class="pagination__link">1</a>
+								<a href="#" class="pagination__link pagination__link_active">1</a>
 							</li>
 							<li class="pagination__item">
-								<a href="" class="pagination__link">2</a>
+								<a href="#" class="pagination__link">2</a>
 							</li>
 							<li class="pagination__item">
-								<a href="" class="pagination__link">3</a>
+								<a href="#" class="pagination__link">3</a>
 							</li>
 							<li class="pagination__item">
-								<a href="" class="pagination__link">4</a>
+								<a href="#" class="pagination__link">4</a>
 							</li>
 							<li class="pagination__item">
-								<a href="" class="pagination__link">5</a>
+								<a href="#" class="pagination__link">5</a>
 							</li>
 							<li class="pagination__item">
-								<a href="" class="pagination__link">6</a>
+								<a href="#" class="pagination__link">6</a>
 							</li>
 						</ul>
 						
