@@ -1,0 +1,43 @@
+.recommended {
+	&__carousel {
+		position: relative;
+	}
+
+	&___arrow {
+		display: block;
+		width: 60px;
+		height: 60px;
+		background: {
+			image: url('img/arrow.svg');
+			position: center;
+			repeat: no-repeat;
+			size: 70%;
+			color: $color-gray-light;
+		};
+		border: 0;
+		border-radius: 50%;
+		position: absolute;
+		z-index: 5;
+		top: 50%;
+		transition: background-color .3s ease-in-out;
+
+
+		&_left {
+			left: 0;
+			transform: rotate(180deg);
+		}
+
+		&_right {
+			right: 0;
+		}
+
+		&__disabled {
+			opacity: .2;
+			pointer-events: none;
+		}
+
+		&:hover {
+			background-color: $color-gray;
+		}
+	}
+}
