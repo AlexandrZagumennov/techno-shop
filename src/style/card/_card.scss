@@ -29,6 +29,11 @@
 		height: 120px;
 		border:none;
 		background-color: transparent;
+
+		&_active {
+			outline: 3px solid $color-main;
+			outline-offset: -3px;
+		}
 	}
 
 	&__title {
