@@ -45,13 +45,13 @@
 
 	<main class="main">
 		<section class="cart">
-			<h2 class="visually-hidden">Корзина</h2>
+			<h2 class="visually-hidden">Оформление заказа</h2>
 			<div class="container cart__container">
 				<section class="cart-goods">
-					<h3 class="cart-goods__title">Корзина</h3>
+					<h3 class="cart__title cart-goods__title">Корзина</h3>
 					<ul class="cart-goods__list">
 						<li class="cart-goods__item item">
-							<img src="img/desktop.png" alt="#">
+							<img class="item__img" src="img/desktop.png" alt="#">
 							<div class="item__detail">
 								<h4 class="item__title">Монитор AOC 24G2U/BK</h4>
 								<p class="item__vendor-code">Артикул: 654651968</p>
@@ -74,7 +74,7 @@
 							</div>
 						</li>
 						<li class="cart-goods__item item">
-							<img src="img/clock.png" alt="#">
+							<img class="item__img" src="img/clock.png" alt="#">
 							<div class="item__detail">
 								<h4 class="item__title">Смарт-часы CANYON Lollypop</h4>
 								<p class="item__vendor-code">Артикул: 654675757</p>
@@ -97,7 +97,7 @@
 							</div>
 						</li>
 						<li class="cart-goods__item item">
-							<img src="img/smart.png" alt="#">
+							<img class="item__img" src="img/smart.png" alt="#">
 							<div class="item__detail">
 								<h4 class="item__title">Смарт-приставка Selenga R1</h4>
 								<p class="item__vendor-code">Артикул: 724651960</p>
@@ -122,74 +122,79 @@
 					</ul>
 				</section>
 
-				<section class="cart__adress adres">
-					<h3 class="cart__title">Адрес доставки</h3>
-
-					<form class="adress__form">
-						<label>
-							<select class="address__item address__item_select" name="city">
-								<option value="" disabled selected>Город</option>
-								<option value="Moscow" >Москва</option>
-								<option value="S. - Peterburg" >С. - Петербург</option>
-								<option value="Kazan" >Казань</option>
-							</select>
-						</label>
-
-						<label>
-							<input class="address__item" type="text" placeholder="Улица, дом">
-						</label>
-						<label>
-							<input class="address__item" type="text" placeholder="Квартира">
-						</label>
-						<label>
-							<input class="address__item" type="text" placeholder="ФИО">
-						</label>
-						<label>
-							<input class="address__item" type="text" placeholder="Индекс">
-						</label>
-
-						<button class="address__item address__item_btn">Сохранить</button>
-
-						<label class="address__label-save">
-							<input type="checkbox" name="save-address">Запомнить этот адрес
-						</label>
-
-					</form>
-				</section>
-
-				<section class="cart__total">
+				<section class="cart__total total">
 					<h3 class="visually-hidden">Итог</h3>
 
-					<ul class="total__table">
-						<li class="total__row total__row_header">
-							<span>Итого</span><span>41 222 ₽</span>
-						</li>
-						<li class="total__row total__row_gray">
-							<span>Товары, 3 шт.</span><span>41 222 ₽</span>
-						</li>
-						<li class="total__row total__row_gray">
-							<span>Скидка</span><span>0 ₽</span>
-						</li>
-						<li class="total__row total__row_gray">
-							<span>Доставка</span><span>0 ₽</span>
-						</li>
-						<li class="total__row">
-							<span>Дата</span><span>01 - 03 июля</span>
-						</li>
-						<li class="total__row">
-							<span>Оплата</span><span>Картой</span>
-						</li>
-					</ul>
-
-					<div class="total__order">
-						<button class="total__submit">Оформить заказ</button>
-
-						<label class="total__agree">
-							<input type="checkbox" name="agree" >
-							<span>Согласен с <a href="#" class="total__agree-link">условиями </a>правил пользования торговой площадкой и&nbsp;правилами возврата</span>
-						</label>
+					<div class="total__wrapper">
+						<ul class="total__table">
+							<li class="total__row total__row_header">
+								<span>Итого</span><span>41 222 ₽</span>
+							</li>
+							<li class="total__row total__row_gray">
+								<span>Товары, 3 шт.</span><span>41 222 ₽</span>
+							</li>
+							<li class="total__row total__row_gray">
+								<span>Скидка</span><span>0 ₽</span>
+							</li>
+							<li class="total__row total__row_gray total__row_gap">
+								<span>Доставка</span><span>0 ₽</span>
+							</li>
+							<li class="total__row">
+								<span>Дата</span><span>01 - 03 июля</span>
+							</li>
+							<li class="total__row">
+								<span>Оплата</span><span>Картой</span>
+							</li>
+						</ul>
+	
+						<div class="total__order">
+							<button class="total__submit">Оформить заказ</button>
+	
+							<label class="total__agree">
+								<input type="checkbox" name="agree" required>
+								<span>Согласен с <a href="#" class="total__agree-link">условиями </a>правил пользования торговой площадкой и&nbsp;правилами возврата</span>
+							</label>
+						</div>
 					</div>
 
+				</section>
+
+				<section class="cart__address address">
+					<h3 class="cart__title address__title">Адрес доставки</h3>
+
+					<form class="adress__form">
+						<div class="address__grid-wrapper">
+							<label>
+								<select class="address__item address__item_select" name="city">
+									<option value="" disabled selected>Город</option>
+									<option value="Moscow" >Москва</option>
+									<option value="S. - Peterburg" >С. - Петербург</option>
+									<option value="Kazan" >Казань</option>
+								</select>
+							</label>
+	
+							<label>
+								<input class="address__item" type="text" placeholder="Улица, дом">
+							</label>
+							<label>
+								<input class="address__item" type="text" placeholder="Квартира">
+							</label>
+							<label>
+								<input class="address__item" type="text" placeholder="ФИО">
+							</label>
+							<label>
+								<input class="address__item" type="text" placeholder="Индекс">
+							</label>
+	
+							<button class="address__item address__item_btn">Сохранить</button>
+
+							<label class="address__label-save">
+								<input type="checkbox" name="save-address">
+								<span>Запомнить этот адрес</span>
+							</label>
+						</div>
+
+					</form>
 				</section>
 			</div>
 		</section>

@@ -34,9 +34,10 @@ new Swiper('.recommended__carousel', {
 	spaceBetween: 30,
 	slidesPerView: 5,
 		navigation: {
-			nextEl: '.recommended___arrow_right',
-			prevEl: '.recommended___arrow_left',
-			disabledClass: '.recommended___arrow_disabled',
+			nextEl: '.recommended__arrow_right',
+			prevEl: '.recommended__arrow_left',
+			disabledClass: 'recommended__arrow_disabled',
 	},
 	modules: [Navigation]
 });
+
