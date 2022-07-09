@@ -1,6 +1,18 @@
 .address {
+	@include desktop {
+		max-width: 700px;
+	}
+
+	@include laptop {
+		max-width: 100%;
+	}
+
 	&__title {
 		margin-bottom: 30px;
+
+		@include mobile {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__grid-wrapper {
@@ -8,6 +20,21 @@
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(2, 50px) 18px;
 		gap: 30px;
+
+		@include desktop {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, 50px) 18px;
+			gap: 20px;
+		}
+
+		@include tablet {
+			gap: 10px;
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+		}
 	}
 
 	&__item {
@@ -16,10 +43,21 @@
 		padding: 15px 16px 15px 10px;
 		background-color: $color-secondary;
 		border: 1px solid $color-primary;
+		color: $color-gray;
+
+		@include tablet {
+			font-size: 12px;
+			line-height: 15px;
+		}
 
 		&::placeholder {
 			font-size: 16px;
 			line-height: 20px;
+
+			@include tablet {
+				font-size: 12px;
+				line-height: 15px;
+			}
 		}
 		
 		&_btn {
@@ -43,10 +81,17 @@
 	}
 
 	&__label-save {
-		grid-column: 3 / 4;
+		font-size: 14px;
+		line-height: 17px;
+		grid-column: -2;
 		display: flex;
 		align-items: center;
 		gap: 8px;
+		
+		@include tablet {
+			font-size: 12px;
+			line-height: 15px;
+		}
 	}
 }
 
