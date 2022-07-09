@@ -3,6 +3,24 @@
 		display: grid;
 		grid-template-columns: 4fr 340px;
 		gap: 72px 30px;
+
+		@include desktop {
+			gap: 72px 20px;
+		}
+
+		@include laptop {
+			grid-template-columns: 3fr 310px;
+			gap: 80px 20px;
+		}
+
+		@include tablet {
+			grid-template-columns: 1fr;
+			gap: 50px 20px;
+		}
+
+		@include mobile {
+			gap: 40px 10px;
+		}
 	}
 
 	&__title {
@@ -10,17 +28,18 @@
 		font-size: 44px;
 		line-height: 54px;
 		margin-bottom: 10px;
-	}
 
-	&__goods {
-
-	}
-
-	&__filter {
-
+		@include mobile {
+			font-size: 30px;
+			line-height: 37px;
+		}
 	}
 
 	&__pagination {
 		grid-column: 2 span;
+
+		@include tablet {
+			grid-column: auto;
+		}
 	}
 }

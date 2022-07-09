@@ -72,34 +72,37 @@ input[type="search"]::-webkit-search-cancel-button {
     max-width: calc(1820px + 2*30px);
     padding: 0 30px;
     margin: 0 auto;
+
+	@include desktop {
+		max-width: calc(1420px + 2 * 30px);
+	}
+
+	@include laptop{
+		max-width: calc(970px + 2 * 15px);
+		padding: 0 15px;
+	}
+
+	@include tablet {
+		max-width: calc(640px + 2 * 15px);
+	}
+
+	@include mobile{
+		max-width: calc(300px + 2 * 10px);
+		padding: 0 10px;
+	}
 }
 
 .main {
     padding-top: 44px;
     padding-bottom: 120px;
+
+	@include tablet {
+		padding-top: 24px;
+		padding-bottom: 80px;
+	}
+
+	@include mobile {
+		padding-top: 35px;
+	}
 }
 
-@media (max-width: 1600px) {
-    .container {
-        max-width: calc(1420px + 2*30px);
-      }
-}
-
-@media (max-width: 1024px) {
-    .container {
-        max-width: calc(970px + 2*30px);
-      }
-}
-
-@media (max-width: 768px) {
-    .container {
-        max-width: calc(639px + 2*30px);
-      }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 10px;
-        max-width: calc(300px + 2*10px);
-      }
-}

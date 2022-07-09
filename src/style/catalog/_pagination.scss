@@ -6,6 +6,10 @@
 	font-size: 18px;
 	line-height: 22px;
 
+	@include mobile {
+		gap: 10px;
+	}
+
 	&__arrow {
 		display: block;
 		width: 18px;

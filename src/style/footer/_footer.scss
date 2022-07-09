@@ -3,18 +3,76 @@
 	color: $color-secondary;
 	padding: 80px 0;
 
+	@include laptop {
+		padding: 50px 0 54px 0;
+	}
+  
+	@include tablet {
+		padding: 40px 0 32px 0;
+	}
+
+	@include mobile { 
+		padding: 23px 0;
+	}
+
 	&__container {
 		display: grid;
 		grid-template-columns: 1fr 2fr 1fr 1fr;
-		gap: 30px;
+		column-gap: 30px;
+
+		grid-template-areas: 
+			"logo catalog customer contacts"
+			"copywright copywright copywright copywright";
+		
+		@include laptop {
+			grid-template-columns: 395px 235px 280px;
+			grid-template-areas: 
+				"logo . ."
+				"catalog customer contacts"
+				"copywright copywright copywright";
+			row-gap: 57px;
+		}
+
+		@include tablet {
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: 
+				"logo . "
+				"catalog customer"
+				"catalog contacts"
+				"copywright copywright";
+				row-gap: 40px;
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+			grid-template-areas: 
+				"logo"
+				"catalog"
+				"customer"
+				"contacts"
+				"copywright";
+		}
 	}
 
 	&__logo-link {
 		place-self: start; /*выравнивание элемента макета сетки внутри ячейки по оси столбца и по оси строки grid-контенера*/
+		grid-area: logo;
+
+		@include mobile {
+			width: 100px;
+		}
 	}
 
 	&__logo {
 		width: 146px;
+
+		@include tablet {
+			margin-bottom: 27px;
+		}
+
+		@include mobile {
+			margin-bottom: 0;
+		}
 	}
 
 	&__column-title {
@@ -22,6 +80,16 @@
 		font-size: 32px;
 		line-height: 130%;
 		margin-bottom: 40px;
+
+		@include laptop {
+			margin-bottom: 20px;
+		}
+
+		@include mobile {
+			font-size: 20px;
+			line-height: 130%;
+			margin-bottom: 15px;
+		}
 	}
 
 	&__list {
@@ -29,8 +97,17 @@
 		font-size: 22px;
 		line-height: 150%;
 
+		@include mobile {
+			font-size: 14px;
+			line-height: 17px;
+		}
+
 		&_double {
 			column-count: 2; /*разбивает содержимое элемента на заданное число столбцов.*/
+
+			@include tablet {
+				column-count: auto;
+			}
 		}
 
 		&_contacts {
@@ -38,6 +115,12 @@
 			font-size: 16px;
 			line-height: 130%;
 			margin-bottom: 36px;
+
+			@include mobile {
+				font-size: 13px;
+				line-height: 130%;
+				margin-bottom: 20px;
+			}
 		}
 	}
 
@@ -53,6 +136,50 @@
 		}
 	}
 
+	&__row {
+		grid-area: copywright;
+
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-areas: 
+			"copy . . . design";
+		column-gap: 30px;
+
+		padding-top: 51px;
+
+		@include desktop {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		@include laptop {
+			padding-top: 22px;
+
+			grid-template-columns: 395px 235px 280px;
+			grid-template-areas: 
+				"copy . design";
+		}
+
+		@include tablet {
+			padding-top: 20px;
+
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: 
+				"copy design";
+		}
+
+		@include mobile {
+			padding-top: 10px;
+
+			grid-template-columns: 1fr;
+    		grid-template-areas: "copy" "design";
+			//grid-template-areas: 
+			//	"copy"
+			//	"disign";
+			column-gap: 0;
+			row-gap: 30px;
+		}
+	}
+
 	&__link,
 	&__copywright-email {
 		transition: color .36s ease-in-out;
@@ -62,14 +189,40 @@
 		}
 	}
 
-	&__row {
-		grid-column: 1 / 5;
-		grid-row: 2 / 2;
-		display: flex;
-		justify-content: space-between;
-		padding-top: 51px;
+	&__copy-text, 
+	&__copywright-wrapper {
 		font-weight: 500;
 		font-size: 16px;
 		line-height: 130%;
+
+		@include mobile {
+			font-size: 14px;
+			line-height: 130%;
+		}
 	}
+
+	&__copywright-description {
+		margin-bottom: 10px;
+	}
+
+	&__catalog {
+		grid-area: catalog;
+
+	}
+	&__customer {
+		grid-area: customer ;
+
+	}
+	&__contacts {
+		grid-area: contacts;
+	}
+
+	&__copy-text {
+		grid-area: copy;
+	}
+
+	&__copywright-wrapper {
+		grid-area: design;
+	}
+
 }
